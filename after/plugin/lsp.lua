@@ -8,6 +8,7 @@ local lsp = require('lsp-zero').preset({
 
 lsp.ensure_installed({
 	'rust_analyzer',
+    'rustfmt'
 	'yamlls',
 	'pyright',
 	'ansiblels',
