@@ -55,6 +55,14 @@ end)
 
 lsp.setup()
 
+
+-- for typst lsp
+require'lspconfig'.typst_lsp.setup{
+	settings = {
+		exportPdf = "onSave" -- Choose onType, onSave or never.
+	}
+}
+
 -- for formatting files manually
 vim.api.nvim_create_user_command('Fmt',
     function()
