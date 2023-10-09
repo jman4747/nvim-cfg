@@ -59,7 +59,8 @@ lsp.setup()
 -- for typst lsp
 require'lspconfig'.typst_lsp.setup{
 	settings = {
-		exportPdf = "onSave" -- Choose onType, onSave or never.
+        -- Using typst watch <file name> so this can be never.
+		exportPdf = "never" -- Choose onType, onSave or never.
 	}
 }
 
