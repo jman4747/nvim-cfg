@@ -8,17 +8,7 @@ local lsp = require('lsp-zero').preset({
 
 lsp.ensure_installed({
     'rust_analyzer',
-    'yamlls',
-    'pyright',
-    'ansiblels',
     'bashls',
-    'neocmake',
-    'jdtls',
-    'taplo',
-    'lemminx',
-    'clangd',
-    'eslint',
-    'tsserver',
     'marksman',
     'lua_ls'
 })
