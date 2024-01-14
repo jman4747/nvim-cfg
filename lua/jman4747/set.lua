@@ -1,15 +1,28 @@
 -- Relative line numbers w/absolute at cursor
-vim.cmd("set nu rnu")
+	vim.cmd("set nu rnu")
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "BufNew", "BufAdd"}, {
+  pattern = "*",
+  callback = function()
+	  -- Please just used tabs
+	  vim.opt.tabstop = 4
+	  vim.opt.shiftwidth = 4
+	  vim.opt.expandtab = false
+	  vim.opt.smartindent = true
+	  vim.opt.wrap = false
+
+	  -- I want LF not CRLF even on Windows
+	  vim.opt.fileformat = "unix"
+	  vim.opt.fixendofline = true
+  end,
+})
+
+vim.opt.listchars = "tab:▸▸,trail:-,nbsp:+"
+
 -- I want LF not CRLF even on Windows
-vim.cmd("set fileformat=unix")
+vim.opt.fileformats="unix,dos"
 
 vim.g.mapleader = " "
-
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
-vim.opt.smartindent = true
-vim.opt.wrap = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

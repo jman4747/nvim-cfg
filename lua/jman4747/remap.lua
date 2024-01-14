@@ -1,16 +1,11 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-function normremap(old, new)
+local function normremap(old, new)
     vim.keymap.set("n", old, new)
 end
-function visremap(old, new)
+local function visremap(old, new)
     vim.keymap.set("v", old, new)
 end
-function insmremap(old, new)
-	vim.keymap.set("i", old, new)
-end
 
-insmremap("<S-Tab>", "<C-q>\t")
-normremap("<S-Tab>", "<C-q>\t")
 normremap("gpv", vim.cmd.Ex)
 normremap("<leader>u", ":UndotreeShow<CR>")
 
@@ -28,4 +23,6 @@ visremap("<leader>pc", "\"+p")
 normremap("<leader>pc", "\"+p")
 visremap("<leader>cc", "\"+y")
 
+-- for typing tab literals
+normremap("<S-Tab>", "a\t")
 normremap("<Tab>", "i\t")

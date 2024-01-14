@@ -86,9 +86,9 @@ cmp.setup({
     -- toggle completion menu
     ['<C-e>'] = cmp_action.toggle_completion(),
 
-    -- tab complete
-    ['<Tab>'] = cmp_action.tab_complete(),
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    -- tab complete disabled to get literal tabs
+    --['<Tab>'] = cmp_action.tab_complete(),
+    --['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
     -- navigate between snippet placeholder
     ['<C-d>'] = cmp_action.luasnip_jump_forward(),
